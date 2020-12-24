@@ -3,19 +3,20 @@ count=0;
 winner="false";
 function main(i){
 b=document.getElementById('square'+i);
-if(count<10){
+if(count<=9){
 if(b.value==""){
 if(turn==1){
 b.value="X";
 turn=2;
+count=count+1;
 checkresult();
 }
 else if(turn==2){
 b.value="O";
 turn=1;
+count=count+1;
 checkresult();
 }
-count+=1;
 }
 }
 }
@@ -104,7 +105,7 @@ alert("Player 2 wins");
 }if(square[2]!=""){
 winner="true";
 }
-}if(count==8){
-alert(winner);
+}if(count==9 && winner=="false"){
+alert("Tied");
 }
 }
